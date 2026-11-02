@@ -17,9 +17,12 @@
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Muhammad-Aziz, home">M-A</a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <button class="nav-toggle" type="button" aria-label="Open navigation menu"
+      aria-expanded="false" aria-controls="nav">Menu</button>
     <nav id="nav" class="nav" aria-label="Main">
       <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -52,14 +55,46 @@
           <p>I'm a developer who works directly with clients, mostly educational centres and local service businesses in Uzbekistan. I handle the whole job: understanding how the business runs, designing the data, writing the backend and building an interface that staff can use without training.</p>
           <p>I work in Uzbek and English, so I can talk to the people who use the system as easily as the people who pay for it.</p>
         </div>
-        <dl class="skills">
-          <div><dt>Backend</dt><dd>Python, FastAPI, Django, SQLAlchemy, PostgreSQL, SQLite</dd></div>
-          <div><dt>Frontend</dt><dd>HTML, CSS, JavaScript</dd></div>
-          <div><dt>Bots</dt><dd>Telegram bots with aiogram</dd></div>
-          <div><dt>Delivery</dt><dd>Render, Git and GitHub, VS Code on Windows</dd></div>
-          <div><dt>Languages</dt><dd>Uzbek, English</dd></div>
-        </dl>
+
       </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="skills">
+      <h2 class="section-title">Skills &amp; Tools</h2>
+      <p class="section-intro">Technologies and tools I use to build practical digital products.</p>
+      <div class="skill-grid">
+        <article class="skill-group"><h3>Backend Development</h3><p>Python, FastAPI, Django, SQLAlchemy</p></article>
+        <article class="skill-group"><h3>Frontend Development</h3><p>HTML, CSS, JavaScript, Responsive Design</p></article>
+        <article class="skill-group"><h3>Database Management</h3><p>PostgreSQL, SQLite, Data Modeling</p></article>
+        <article class="skill-group"><h3>Automation &amp; Bots</h3><p>Telegram Bots, Python, aiogram</p></article>
+        <article class="skill-group"><h3>Tools &amp; Deployment</h3><p>Git, GitHub, VS Code, Render</p></article>
+        <article class="skill-group"><h3>Communication</h3><p>Uzbek, English, Client Communication</p></article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+      <h2 class="section-title">Experience</h2>
+      <p class="section-intro">My professional journey and development experience.</p>
+      <ol class="experience-list">
+        <li class="experience-item">
+          <div class="experience-meta"><span>YYYY — Present</span><span>Freelance</span></div>
+          <div class="experience-content">
+            <h3>Independent Web Developer</h3>
+            <p>Describe your work with clients, the systems you've developed, and the problems you've solved.</p>
+            <ul class="tags"><li>Python</li><li>Backend</li><li>Web Development</li></ul>
+          </div>
+        </li>
+        <li class="experience-item">
+          <div class="experience-meta"><span>YYYY — YYYY</span><span>Organisation / Client</span></div>
+          <div class="experience-content">
+            <h3>Role / Position</h3>
+            <p>Add your responsibilities, achievements, technologies and measurable results here.</p>
+            <ul class="tags"><li>Technology</li><li>Project Management</li></ul>
+          </div>
+        </li>
+      </ol>
     </section>
 
     <!-- PROJECTS -->
@@ -72,7 +107,7 @@
             <p>Timed IELTS practice for students, with test taking, scoring and progress tracking.</p>
           </div>
           <ul class="tags"><li>FastAPI</li><li>SQLAlchemy</li><li>PostgreSQL</li></ul>
-          <a class="project-link" href="#" aria-label="BandUp case study">Case study</a>
+          <span class="project-note" aria-label="BandUp case study">Case study coming soon</span>
         </li>
         <li class="project">
           <div class="project-main">
@@ -80,7 +115,7 @@
             <p>A web CRM for a learning centre: students, groups, attendance and payments in one place.</p>
           </div>
           <ul class="tags"><li>Python</li><li>FastAPI</li><li>JavaScript</li></ul>
-          <a class="project-link" href="#" aria-label="Intelligent CRM case study">Case study</a>
+          <span class="project-note" aria-label="Intelligent CRM case study">Case study coming soon</span>
         </li>
         <li class="project">
           <div class="project-main">
@@ -88,7 +123,7 @@
             <p>A public, multilingual website that shows courses and takes enrolment requests.</p>
           </div>
           <ul class="tags"><li>Django</li><li>i18n</li><li>Render</li></ul>
-          <a class="project-link" href="#" aria-label="Learning centre website case study">Case study</a>
+          <span class="project-note" aria-label="Learning centre website case study">Case study coming soon</span>
         </li>
         <li class="project">
           <div class="project-main">
@@ -96,7 +131,7 @@
             <p>A Telegram bot with a product catalogue, calculator and list builder, in Latin and Cyrillic.</p>
           </div>
           <ul class="tags"><li>aiogram</li><li>FSM</li><li>SQLite</li></ul>
-          <a class="project-link" href="#" aria-label="Trade bot case study">Case study</a>
+          <span class="project-note" aria-label="Trade bot case study">Case study coming soon</span>
         </li>
       </ul>
       <p class="more">More on <a href="https://github.com/UZBRICH" rel="noopener">GitHub</a>.</p>
