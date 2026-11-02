@@ -1,0 +1,184 @@
+/* ---------- Design tokens ---------- */
+:root {
+  /* Charcoal base */
+  --bg:        #15130f;
+  --surface:   #1d1a15;
+  --line:      #3a3326;
+
+  /* Gold scale */
+  --gold-700:  #8a6a24;
+  --gold-500:  #c9a24b;
+  --gold-300:  #e6c97e;
+  --gold-100:  #f4e3b3;
+  --amber:     #e8a33d;
+
+  /* Text */
+  --text:      #f6f1e7;
+  --muted:     #b3a994;
+
+  /* Metallic gradient */
+  --gold-metal: linear-gradient(120deg, var(--gold-700) 0%, var(--gold-300) 35%, var(--gold-500) 55%, var(--gold-100) 75%, var(--gold-500) 100%);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --maxw: 68rem;
+  --radius: 2px;
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 1.0625rem/1.65 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--gold-300); text-underline-offset: 0.2em; }
+a:hover { color: var(--amber); }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.1; margin: 0; }
+p { margin: 0 0 1rem; }
+ul { margin: 0; padding: 0; list-style: none; }
+
+.skip { position: absolute; left: -999px; top: 0; background: var(--gold-500); color: #15130f; padding: .5rem 1rem; z-index: 100; }
+.skip:focus { left: 1rem; top: 1rem; }
+
+/* ---------- Header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem clamp(1.25rem, 5vw, 3rem);
+  background: rgba(21, 19, 15, .88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  font: 700 1.5rem/1 var(--font-display);
+  text-decoration: none;
+  background: var(--gold-metal);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.nav { display: flex; gap: 2rem; }
+.nav a { color: var(--text); text-decoration: none; font-size: .95rem; padding: .25rem 0; border-bottom: 1px solid transparent; }
+.nav a:hover, .nav a.is-active { color: var(--gold-300); border-color: var(--gold-500); }
+.nav-toggle { display: none; background: none; border: 1px solid var(--line); color: var(--text); padding: .4rem .9rem; font: inherit; font-size: .9rem; border-radius: var(--radius); cursor: pointer; }
+
+/* ---------- Hero ---------- */
+.hero {
+  max-width: var(--maxw); margin: 0 auto;
+  min-height: calc(100svh - 4.5rem);
+  padding: 4rem clamp(1.25rem, 5vw, 3rem);
+  display: grid; grid-template-columns: 1.6fr 1fr; gap: 3rem; align-items: center;
+}
+.hero-role { color: var(--muted); margin-bottom: 1rem; }
+.hero-name {
+  font-size: clamp(3.2rem, 9vw, 7rem);
+  font-weight: 700; letter-spacing: -.01em;
+  background: var(--gold-metal); background-size: 200% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.hero-rule { display: block; height: 2px; width: 7rem; margin: 1.75rem 0; background: var(--gold-metal); transform-origin: left; }
+.hero-lead { max-width: 34rem; font-size: 1.2rem; color: var(--text); }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
+
+.hero-portrait {
+  aspect-ratio: 4 / 5; max-width: 22rem; width: 100%; justify-self: end;
+  display: grid; place-items: center; overflow: hidden;
+  border: 1px solid var(--gold-500);
+  outline: 1px solid var(--line); outline-offset: .75rem;
+  background: radial-gradient(circle at 30% 20%, #2a2418, var(--surface));
+}
+.hero-portrait span { font: 600 5rem/1 var(--font-display); color: var(--gold-500); }
+.hero-portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+/* The one orchestrated page-load moment: the gold rule draws, then the name settles in */
+@media (prefers-reduced-motion: no-preference) {
+  .hero-rule { animation: draw 1s .2s cubic-bezier(.2, .7, .2, 1) both; }
+  .hero-name { animation: settle .9s cubic-bezier(.2, .7, .2, 1) both, sheen 6s 1s ease-in-out infinite alternate; }
+  @keyframes draw { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes settle { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @keyframes sheen { from { background-position: 0 0; } to { background-position: 100% 0; } }
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block; padding: .85rem 1.75rem; border-radius: var(--radius);
+  font: 600 .95rem/1 var(--font-body); text-decoration: none; cursor: pointer; border: 1px solid transparent;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.btn-gold { background: var(--gold-metal); color: #15130f; }
+.btn-gold:hover { background: var(--amber); color: #15130f; }
+.btn-ghost { border-color: var(--gold-500); color: var(--gold-300); }
+.btn-ghost:hover { background: var(--gold-500); color: #15130f; }
+
+/* ---------- Sections ---------- */
+.section { max-width: var(--maxw); margin: 0 auto; padding: 5rem clamp(1.25rem, 5vw, 3rem); }
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2.5rem;
+  padding-bottom: 1rem; border-bottom: 1px solid var(--line);
+  color: var(--gold-100);
+}
+
+/* About */
+.about-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 3.5rem; }
+.prose { max-width: 38rem; color: var(--muted); }
+.prose p:first-child { color: var(--text); }
+.skills > div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .9rem 0; border-bottom: 1px solid var(--line); }
+.skills > div:first-child { padding-top: 0; }
+.skills dt { color: var(--gold-300); font-weight: 500; }
+.skills dd { margin: 0; color: var(--muted); }
+
+/* Projects: rows, not cards */
+.project {
+  display: grid; grid-template-columns: 1.6fr 1fr auto; gap: 1.5rem 2.5rem; align-items: center;
+  padding: 1.75rem 1rem 1.75rem 0; border-bottom: 1px solid var(--line);
+  border-left: 2px solid transparent; transition: border-color .2s, padding-left .2s, background-color .2s;
+}
+.project:hover, .project:focus-within { border-left-color: var(--gold-500); padding-left: 1.25rem; background: var(--surface); }
+.project h3 { font-size: 1.6rem; color: var(--text); margin-bottom: .35rem; }
+.project p { margin: 0; color: var(--muted); max-width: 34rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.tags li { font-size: .85rem; color: var(--gold-100); border: 1px solid var(--gold-700); padding: .15rem .65rem; border-radius: 999px; }
+.project-link { font-weight: 500; white-space: nowrap; }
+.more { margin-top: 2rem; color: var(--muted); }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+.contact-lead { font: 500 1.9rem/1.25 var(--font-display); color: var(--text); max-width: 26rem; }
+.contact-links { display: grid; gap: .5rem; margin-top: 1.5rem; }
+.form { display: grid; gap: .5rem; }
+.form label { font-size: .9rem; color: var(--muted); margin-top: .75rem; }
+.form input, .form textarea {
+  width: 100%; background: var(--surface); color: var(--text);
+  border: 1px solid var(--line); border-radius: var(--radius);
+  padding: .8rem 1rem; font: inherit;
+}
+.form input:focus, .form textarea:focus { outline: none; border-color: var(--gold-500); box-shadow: 0 0 0 3px rgba(201, 162, 75, .25); }
+.form .btn { justify-self: start; margin-top: 1.25rem; }
+
+/* Footer */
+.site-footer {
+  max-width: var(--maxw); margin: 0 auto; padding: 2rem clamp(1.25rem, 5vw, 3rem) 3rem;
+  display: flex; justify-content: space-between; color: var(--muted); font-size: .9rem;
+  border-top: 1px solid var(--line);
+}
+.site-footer p { margin: 0; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 52rem) {
+  .nav-toggle { display: block; }
+  .nav {
+    position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; gap: 0;
+    background: var(--bg); border-bottom: 1px solid var(--line); display: none;
+  }
+  .nav.is-open { display: flex; }
+  .nav a { padding: 1rem clamp(1.25rem, 5vw, 3rem); border: 0; border-top: 1px solid var(--line); }
+
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-portrait { justify-self: start; max-width: 16rem; order: -1; }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .project { grid-template-columns: 1fr; }
+}

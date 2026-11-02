@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Muhammad-Aziz | Full-stack developer</title>
+  <meta name="description" content="Portfolio of Muhammad-Aziz, a full-stack developer building web systems and Telegram bots for learning centres and service businesses.">
+  <meta name="theme-color" content="#15130f">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Muhammad-Aziz, home">M-A</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav id="nav" class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-text">
+        <p class="hero-role">Full-stack developer in Andijan, Uzbekistan</p>
+        <h1 class="hero-name">Muhammad-Aziz</h1>
+        <span class="hero-rule" aria-hidden="true"></span>
+        <p class="hero-lead">I build web systems and Telegram bots that help learning centres and service businesses run day to day: registration, payments, practice tests and customer requests.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#projects">View projects</a>
+          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-portrait" aria-hidden="true">
+        <!-- Replace with: <img src="assets/portrait.jpg" alt="Muhammad-Aziz"> -->
+        <span>MA</span>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <h2 class="section-title">About me</h2>
+      <div class="about-grid">
+        <div class="prose">
+          <p>I'm a developer who works directly with clients, mostly educational centres and local service businesses in Uzbekistan. I handle the whole job: understanding how the business runs, designing the data, writing the backend and building an interface that staff can use without training.</p>
+          <p>I work in Uzbek and English, so I can talk to the people who use the system as easily as the people who pay for it.</p>
+        </div>
+        <dl class="skills">
+          <div><dt>Backend</dt><dd>Python, FastAPI, Django, SQLAlchemy, PostgreSQL, SQLite</dd></div>
+          <div><dt>Frontend</dt><dd>HTML, CSS, JavaScript</dd></div>
+          <div><dt>Bots</dt><dd>Telegram bots with aiogram</dd></div>
+          <div><dt>Delivery</dt><dd>Render, Git and GitHub, VS Code on Windows</dd></div>
+          <div><dt>Languages</dt><dd>Uzbek, English</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <h2 class="section-title">Selected projects</h2>
+      <ul class="projects">
+        <li class="project">
+          <div class="project-main">
+            <h3>BandUp, IELTS practice platform</h3>
+            <p>Timed IELTS practice for students, with test taking, scoring and progress tracking.</p>
+          </div>
+          <ul class="tags"><li>FastAPI</li><li>SQLAlchemy</li><li>PostgreSQL</li></ul>
+          <a class="project-link" href="#" aria-label="BandUp case study">Case study</a>
+        </li>
+        <li class="project">
+          <div class="project-main">
+            <h3>Intelligent CRM</h3>
+            <p>A web CRM for a learning centre: students, groups, attendance and payments in one place.</p>
+          </div>
+          <ul class="tags"><li>Python</li><li>FastAPI</li><li>JavaScript</li></ul>
+          <a class="project-link" href="#" aria-label="Intelligent CRM case study">Case study</a>
+        </li>
+        <li class="project">
+          <div class="project-main">
+            <h3>Intelligent O'quv Markazi website</h3>
+            <p>A public, multilingual website that shows courses and takes enrolment requests.</p>
+          </div>
+          <ul class="tags"><li>Django</li><li>i18n</li><li>Render</li></ul>
+          <a class="project-link" href="#" aria-label="Learning centre website case study">Case study</a>
+        </li>
+        <li class="project">
+          <div class="project-main">
+            <h3>Trade bot for plumbers and electricians</h3>
+            <p>A Telegram bot with a product catalogue, calculator and list builder, in Latin and Cyrillic.</p>
+          </div>
+          <ul class="tags"><li>aiogram</li><li>FSM</li><li>SQLite</li></ul>
+          <a class="project-link" href="#" aria-label="Trade bot case study">Case study</a>
+        </li>
+      </ul>
+      <p class="more">More on <a href="https://github.com/UZBRICH" rel="noopener">GitHub</a>.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <p class="contact-lead">Have a system or a bot to build? Tell me what your business needs and I'll reply within a day.</p>
+          <ul class="contact-links">
+            <li><a href="mailto:you@example.com">you@example.com</a></li>
+            <li><a href="https://t.me/your_username" rel="noopener">Telegram: @your_username</a></li>
+            <li><a href="https://github.com/UZBRICH" rel="noopener">GitHub: UZBRICH</a></li>
+          </ul>
+        </div>
+        <!-- Set action to your Formspree (or similar) endpoint -->
+        <form class="form" action="https://formspree.io/f/your-form-id" method="POST">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+          <label for="message">What do you need?</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          <button class="btn btn-gold" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Muhammad-Aziz</p>
+    <a href="#top">Back to top</a>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
